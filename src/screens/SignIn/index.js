@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Text } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import {
     Container,
     InputArea,
@@ -20,15 +20,19 @@ import SignInput from '../../components/SignInput'
 
 export default () => {
 
+    const navigation = useNavigation()
+
     const [emailField, setEmailField] = useState('');
     const [passwordField, setPasswordField] = useState('');
 
     const handleMessageButtonClick = () => {
-
+        navigation.reset({
+            routes: [{name: 'SignUp'}]
+        })
     }
 
     const handleSignClick = () => {
-        
+
     }
 
     return (
